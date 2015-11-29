@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 '''
-this script runs apart from the django to
 access token from https://api.weixin.qq.com/cgi-bin/token using method GET.
 token is stored in redis.
-to get the token call redis.Redis(host='localhost', port=6379, db=0) to get the database.
+to get token call redis.Redis(host='localhost', port=6379, db=0) to get the database.
 '''
 
 from urllib import request
