@@ -1,0 +1,6 @@
+Mon Dec 14 20:46:40 2015:write() argument must be str, not dict{'errmsg': 'invalid appid hint: [cBKh3a0265vr22]', 'errcode': 40013}Mon Dec 14 20:47:45 2015:Cannot access tokenMon Dec 14 20:48:29 2015:Cannot access tokenMon Dec 14 20:48:56 2015:Cannot access token
+Mon Dec 14 20:49:18 2015:Cannot access token
+Wed Dec 16 22:23:39 2015:'str' object has no attribute 'decode'
+Wed Dec 16 22:25:46 2015:YnO55J0mkGsXKFuE--taPo2h4caE0TXEmvSVe-qlxjXPjHX_bwVN1VblO_jmBI6cgRyx2te7qP09jjcAirZC_DzoJjZ078V_ayOUti0acUALLIcAJAHHE
+Wed Dec 16 22:25:46 2015:'str' object has no attribute 'decode'
+Wed Dec 16 22:28:57 2015:RKnkY9D1NsyoLlhLKebO3Qtrw35dae0QHDOyaOmCZqndMI17N2GaJ2cuZ_9_719cequ7OiRlEqbRLBNI6zbsV6Yh3OoJee6yegE4aZoJYLkKALhABANDO
