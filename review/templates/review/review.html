@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="text/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </head>
-
-  <body>
-    <ul class="list-unstyled">
-      {% for thumb_pic in thumb_pic_list %}
-      <li>{{ thumb_pic }}</li>
-      {% endfor %}
-    </ol>
-  </body>
-
+<html class="audioSupported">
+	<head>
+		{% load staticfiles %}
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<title>{{ news_type }}</title>
+		<link type="text/css" rel="stylesheet" href="{% static "review/style.css" %}">
+		<script>
+			_breakImg = 'http://pub.idqqimg.com/qqmobile/pubhistory/images/img_failed.png';
+			_imgError = function(img){
+				if(img.getAttribute('src') != _breakImg){ img.onerror = null; img.src = _breakImg }
+			}
+			var _total=2080;
+		</script>
+	</head>
+	<body>
+		{% for news in news_list %}
+		<div class="multi">
+			<a href="{{ first_url }}" class="item">
+				<time>{{ time }}</time>
+				<div class="wrap">
+					<img src="{{ first_cover_pic_path }}" onerror="_imgError(this)">
+					<h4>{{ first_title }}</h4>
+				</div>
+			</a>
+			{% for content in content_list %}
+			<a href="{{ url }}" class="item">
+				<img src="{{ cover_pic_path }}" onerror="_imgError(this)">
+				<h5>{{ title }}</h5>
+			</a>
+			{% endfor %}
+		</div>
+		{% endfor %}
+	</body>
 </html>

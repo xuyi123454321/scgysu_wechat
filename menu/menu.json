@@ -2,7 +2,7 @@
   "button":[
     {
       "name":"往期推送",
-      "sub_bottom":[
+      "sub_button":[
         {
           "type":"click",
           "name":"小编推荐",
@@ -22,7 +22,7 @@
     },
     {
       "name":"活动通道",
-      "sub_bottom":[
+      "sub_button":[
         {
           "type":"click",
           "name":"讲座通知",
@@ -42,7 +42,7 @@
     },
     {
       "name":"实验室",
-      "sub_bottom":[
+      "sub_button":[
         {
           "type":"click",
           "name":"in comming",

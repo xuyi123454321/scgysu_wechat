@@ -4,6 +4,9 @@ class Menu(models.Model):
     name = models.CharField(max_length = 40)
     position = models.IntegerField() #the right side one counts 0
 
+    def __str__(self):
+        return self.name
+
 class Button(models.Model):
     act_type = models.CharField(max_length = 30)
     name = models.CharField(max_length = 40)
@@ -12,3 +15,6 @@ class Button(models.Model):
     media_id = models.CharField(max_length = 128)
     up_menu = models.ForeignKey(Menu)
     position = models.IntegerField() #the lowest one counts 0
+
+    def __str__(self):
+        return self.name

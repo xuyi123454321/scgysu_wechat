@@ -31,8 +31,8 @@ def access_token(appid, appsecret):
         return (res_dict['access_token'], res_dict['expires_in'])
 
 def main():
-    log_file = open("%s%s"%(path.dirname(__file__), "access_token.log"), "a")
-    app_data = json.load(open("%s%s"%(path.dirname(__file__), "app_data.json"), "r"))
+    log_file = open("%s/%s"%(path.dirname(__file__), "access_token.log"), "a")
+    app_data = json.load(open("%s/%s"%(path.dirname(__file__), "app_data.json"), "r"))
 
     token_cache = redis.Redis(host="localhost", port=6379, db=0)
 

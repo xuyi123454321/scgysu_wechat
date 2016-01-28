@@ -5,7 +5,11 @@ class News(models.Model):
     media_id = models.CharField(max_length = 256)
     update_time = models.IntegerField()
 
+    def __str__(self):
+        return self.media_id
+
 class Content(models.Model):
+    news_from = models.ForeignKey(News, null=True)
     category = models.ForeignKey(Button)
 
     title = models.CharField(max_length = 256)
@@ -17,3 +21,5 @@ class Content(models.Model):
     url = models.URLField()
     content_source_url = models.URLField()
 
+    def __str__(self):
+        return self.title
