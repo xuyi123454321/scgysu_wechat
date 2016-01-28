@@ -1,7 +1,6 @@
 *.pyc
 *~
 static/review/cover_pic/
-app_data.json
 *.log
 *.out
 *test
