@@ -12,7 +12,7 @@ def url_check(request):
     timestamp = request.GET['timestamp']
     nonce = request.GET['nonce']
     echostr = request.GET['echostr']
-    
+
     tmp_str = sha1(''.join(sorted((token, timestamp, nonce))).encode()).hexdigest()
 
     if tmp_str == signature:
