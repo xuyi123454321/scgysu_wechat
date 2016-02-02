@@ -1,5 +1,5 @@
 """
-WSGI config for scgtsu_wechat project.
+WSGI config for scgysu_wechat project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scgtsu_wechat.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scgysu_wechat.settings")
 
 application = get_wsgi_application()

@@ -4,19 +4,19 @@
       "name":"往期推送",
       "sub_button":[
         {
-          "type":"click",
+          "type":"view",
           "name":"小编推荐",
-          "key":"b_recom"
+		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=recom"
         },
         {
-          "type":"click",
+          "type":"view",
           "name":"特色活动",
-          "key":"b_acti"
+		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=acti"
         },
         {
-          "type":"click",
+          "type":"view",
           "name":"科技专窥",
-          "key":"b_sci"
+		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=sci"
         }
       ]
     },

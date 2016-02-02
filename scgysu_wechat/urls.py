@@ -20,6 +20,6 @@ from review import urls as review_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include(message_receive_urls)),
+    url(r'^/$', include(message_receive_urls)),
     url(r'^review/', include(review_urls))
 ]
