@@ -32,8 +32,8 @@ def init():
             new_button.save()
 
     # below set a Menu and a Button named "null" for unsorted news
-    new_menu = Menu.objects.get_or_create(position=0, name="null")[0]
-    new_button = new_menu.button_set.get_or_create(position=0, name="null")[0]
+    new_menu = Menu.objects.get_or_create(position=9, name="null")[0]
+    new_button = new_menu.button_set.get_or_create(position=9, name="null")[0]
 
     menu_file.close()
 

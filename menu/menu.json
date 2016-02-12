@@ -6,17 +6,17 @@
         {
           "type":"view",
           "name":"小编推荐",
-		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=recom"
+		  "url":"http://wechat.ourscgy.ustc.edu.cn/review/?type=recom"
         },
         {
           "type":"view",
           "name":"特色活动",
-		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=acti"
+		  "url":"http://wechat.ourscgy.ustc.edu.cn/review/?type=acti"
         },
         {
           "type":"view",
           "name":"科技专窥",
-		  "url":"wechat.ourscgy.ustc.edu.cn/review?type=sci"
+		  "url":"http://wechat.ourscgy.ustc.edu.cn/review/?type=sci"
         }
       ]
     },

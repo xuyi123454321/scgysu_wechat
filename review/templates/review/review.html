@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--This template is ugly...But I cannot make it better for now-->
 <html class="audioSupported">
 	<head>
 		{% load staticfiles %}
@@ -17,22 +18,8 @@
 		</script>
 	</head>
 	<body>
-		{% for news in news_list %}
-		<div class="multi">
-			<a href="{{ first_url }}" class="item">
-				<time>{{ time }}</time>
-				<div class="wrap">
-					<img src="{{ first_cover_pic_path }}" onerror="_imgError(this)">
-					<h4>{{ first_title }}</h4>
-				</div>
-			</a>
-			{% for content in content_list %}
-			<a href="{{ url }}" class="item">
-				<img src="{{ cover_pic_path }}" onerror="_imgError(this)">
-				<h5>{{ title }}</h5>
-			</a>
-			{% endfor %}
-		</div>
-		{% endfor %}
+		{% autoescape off %}
+		{{ document }}
+		{% endautoescape %}
 	</body>
 </html>
