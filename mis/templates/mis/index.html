@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+	<head>
+		<title>中国科大少年班学院自动选课服务</title>
+		<meta charset='UTF-8' />
+
+		<script>
+			function hide() {
+				document.getElementById("announce").style.display='none';
+			}
+		</script>
+		<style type="text/css">
+			#align1{
+				position:absolute; left:300px;
+			}
+			#align2{
+				position:absolute; left:500px;
+			}
+		</style>
+	</head>
+
+    
+
+	<body style="padding:160px;font-family:'Microsoft YaHei',serif;">
+
+		<h1 align="center">中国科大少年班学院自动选课服务</h1>
+		<br/>
+		<br/>
+		<div id="announce">
+
+			<b>一些说明
+
+			<button type="button" onclick="hide()" >
+				我已阅读,隐藏
+			</button>
+			</b>
+
+			<ol>
+				<li>本服务不来自科大官方。</li>
+				<li>本服务不保证选课必中。</li>
+				<li>本服务不提供选课查询与选中通知的功能，请自行到
+					<a href="http://mis.ustc.edu.cn">教务系统网站</a>
+					查看。</li>
+				<li>本服务不会保留任何账号密码信息。</li>
+				<li>添加一次选课任务只需成功操作一次，请不要重复操作。</li>
+			</ol>
+	
+		</div>
+
+		<form action="http://wechat.ourscgy.ustc.edu.cn/mis/addtask" method="POST">
+		    <br/>
+			<label id="align1">用户名:</label><input type="text" name="username" id="align2"/><br/><br/>
+			<label id="align1">密码:</label><input type="password" name="password" id="align2"/><br/><br/>
+			<label id="align1">验证码:</label><input type="text" name="check" id="align2"/><br/><br/>
+			<label id="align1">课程类型:</label>
+				<select name="lesson_type" id="align2"> 
+					<option value='1'>1:计划内课程</option>
+					<option value='2'>2:自由选修</option>
+					<option value='4'>4:公选课</option>
+					<option value='5'>5:体育选项</option>
+					<option value='6'>6:英语选课</option>
+					<option value='8'>8:重修重考</option>
+				</select>
+			<br/><br/>
+			<label id="align1">课堂号:</label><input type="text" name="lesson_number" id="align2" /><br/><br/>
+			<img src="{{ picture }}" onclick="reload()" alt="Sorry, something went wrong" align="right" />
+			<input type="submit" name="Submit" id="align2" />
+		</form>	
+
+	</body>
+
+</html>

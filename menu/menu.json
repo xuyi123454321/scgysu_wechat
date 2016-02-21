@@ -44,9 +44,9 @@
       "name":"实验室",
       "sub_button":[
         {
-          "type":"click",
-          "name":"in comming",
-          "key":"b_inc"
+          "type":"view",
+          "name":"后台抢课",
+		  "url":"http://wechat.ourscgy.ustc.edu.cn/mis"
         }
       ]
     }

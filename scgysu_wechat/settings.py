@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'django_crontab',# to run review/grap everyday
     'message_receive',
     'menu',
-    'review'
+    'review',
+    'mis'
 )
 
 MIDDLEWARE_CLASSES = (
