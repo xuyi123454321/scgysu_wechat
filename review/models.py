@@ -17,7 +17,7 @@ class Content(models.Model):
     show_cover_pic = models.BooleanField()
     author = models.CharField(max_length = 32)
     digest = models.CharField(max_length = 64)
-    content = models.CharField(max_length = 20000)
+    content = models.CharField(max_length = 40000)
     url = models.URLField()
     content_source_url = models.URLField()
 

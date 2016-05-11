@@ -21,7 +21,7 @@ from mis import urls as mis_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^/$', include(message_receive_urls)),
+    url(r'^', include(message_receive_urls)),
     url(r'^review/', include(review_urls)),
     url(r'^mis/', include(mis_urls))
 ]

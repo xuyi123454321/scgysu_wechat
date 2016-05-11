@@ -4,6 +4,7 @@ from django.template import RequestContext, loader, Template, Context
 import time
 from .models import News, Content
 from menu.models import Button
+from message_receive.views import empty_page
 
 def review_page(request):
     '''
@@ -41,6 +42,8 @@ def review_page(request):
         raise Http404()
 
     all_news = all_news.content_set.all()
+    if len(all_news) == 0:
+        return empty_page(request)
     date_list = []
     first_news_dict = {} # use date as the key, below the same
     other_news_dict = {}
@@ -79,15 +82,19 @@ def review_page(request):
     inner_document = ''
 
     for date in date_list:
-        other_news_context = Context({'news_list': other_news_dict[date]})
-        other_news_document = other_news_template.render(other_news_context)
+        other_news_document = ''
+        try:
+            other_news_context = Context({'news_list': other_news_dict[date]})
+            other_news_document = other_news_template.render(other_news_context)
+        except KeyError:
+            pass
 
-        inner_context = Context({
-            'news': first_news_dict[date],
-            'date': date,
-            'other_news_document': other_news_document
-            })
-        inner_document += inner_template.render(inner_context)
+            inner_context = Context({
+                'news': first_news_dict[date],
+                'date': date,
+                'other_news_document': other_news_document
+                })
+            inner_document += inner_template.render(inner_context)
     
     context = RequestContext(request, {'document': inner_document})
 

@@ -42,10 +42,12 @@ def main():
                                         app_data['appsecret'])
             log_file.write("%s:%s\n"%(time.ctime(), token))
             token_cache['token'] = token # data in redis is stored in bytes
-            time.sleep(expires_in)
+            #time.sleep(expires_in) I decide to use django-crontab instead
         except Exception as e:
             log_file.write("%s:%s\n"%(time.ctime(), e))
             time.sleep(60)
+        else:
+            break
 
     log_file.close()
 

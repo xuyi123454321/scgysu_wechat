@@ -108,6 +108,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # usgin django-crontab to grap materials from wechat
-CRONJOBS = [
-    ('* * */1 * *', 'review.grap.grap_material')
-]
+#CRONJOBS = [
+#    ('* */1 * * *', 'access_token.main'),
+#    ('* * */1 * *', 'review.grap.grap_material')
+#]

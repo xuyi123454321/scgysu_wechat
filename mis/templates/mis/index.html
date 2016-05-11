@@ -8,6 +8,12 @@
 			function hide() {
 				document.getElementById("announce").style.display='none';
 			}
+			function reload() {
+				location.assign("http://wechat.ourscgy.ustc.edu.cn/mis");
+			}
+			function msg() {
+				alert("已添加进后台选课");
+			}
 		</script>
 		<style type="text/css">
 			#align1{
@@ -52,6 +58,7 @@
 			<label id="align1">用户名:</label><input type="text" name="username" id="align2"/><br/><br/>
 			<label id="align1">密码:</label><input type="password" name="password" id="align2"/><br/><br/>
 			<label id="align1">验证码:</label><input type="text" name="check" id="align2"/><br/><br/>
+			<img src="{{ picture }}" onclick="reload()" alt="Sorry, something went wrong" align="right" />
 			<label id="align1">课程类型:</label>
 				<select name="lesson_type" id="align2"> 
 					<option value='1'>1:计划内课程</option>
@@ -63,8 +70,7 @@
 				</select>
 			<br/><br/>
 			<label id="align1">课堂号:</label><input type="text" name="lesson_number" id="align2" /><br/><br/>
-			<img src="{{ picture }}" onclick="reload()" alt="Sorry, something went wrong" align="right" />
-			<input type="submit" name="Submit" id="align2" />
+			<input type="submit" name="Submit" id="align2" onclick="msg();" />
 		</form>	
 
 	</body>

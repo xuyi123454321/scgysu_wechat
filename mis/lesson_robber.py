@@ -4,7 +4,6 @@ from urllib import request, parse
 from http import cookiejar
 from django.template import RequestContext, loader
 from django.http import HttpResponse
-from PIL import Image
 import re
 import pyquery
 import os
@@ -46,8 +45,8 @@ def data_input(request):
 def login(opener, data):
 
     postdata = {
-        'passWord': data["username"],
-        'userCode': data["password"],
+        'userCode': data["username"],
+        'passWord': data["password"],
         'check' : data["check"],
     }
 
@@ -103,7 +102,7 @@ def query_lesson(opener, data):
             parameter['kclb'] = para_list[5][1:-1]
             parameter['kcsx'] = para_list[6][1:-1]
             parameter['cxck'] = para_list[9][1:-1]
-            parameter['zylx'] = para_list[10][1:-1]
+            parameter['zylx'] = '01' # it seems that this has to be set 01
             parameter['gxkfl'] = para_list[11][1:-1]
             parameter['xlh'] = para_list[12][1:-1]
             parameter['sjpdm'] = para_list[7][1:-1]
@@ -121,14 +120,17 @@ def query_lesson(opener, data):
 def rob_lesson(opener, para):
     insert_page = opener.open(url+"/xkgcinsert.do?"+para)
 
-def loop(opener, data):
-    while True:
-        para = query_lesson(opener, data)
-        if para != None:
-            break
+    result = insert_page.read().decode('gb2312')
 
+    if result[0] == 'D':
+        return False
+    else:
+        return True
+
+def loop(opener, para):
     while rob_lesson(opener, para):
         pass
+    return HttpResponse('<script>alert("已选中");</script>')
 
 def main(request):
     opener = get_opener(header)
@@ -148,13 +150,10 @@ def main(request):
 
     data = data_input(request)
 
-    login(opener, data)
+    login_page = login(opener, data).read().decode('gb2312')
 
-    newpid = os.fork()
-    if newpid == 0:
-        loop(opener, data)
-    else:
-        return HttpResponse('<script>alert("已进入后台抢课。")</script>')
+    para = query_lesson(opener, data)
+    if para == None:
+        return HttpResponse('<script>alert("未找到该课程");location.assign("http://wechat.ustc.edu.cn/mis");</script>')
 
-if __name__ == '__main__':
-    main()
+    return loop(opener, para)

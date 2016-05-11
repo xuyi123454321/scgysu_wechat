@@ -9,7 +9,7 @@ def url_check(request):
     for wechat server checking our url
     '''
 
-    token = 'hello'
+    token = 'scgysu'
     signature = request.GET['signature']
     timestamp = request.GET['timestamp']
     nonce = request.GET['nonce']
@@ -37,13 +37,16 @@ def simple_response(request):
     to_user.appendChild(from_user.firstChild)
     from_user.appendChild(to_user.firstChild)
 
-    new_msg = tree.createTextNode("我除了卖萌还什么都不会")
+    new_msg = tree.createTextNode("我除了卖萌还什么都不会~~~等媒体中心的小伙伴来回复吧。")
     msg.appendChild(new_msg)
     msg.removeChild(msg.firstChild)
 
     return HttpResponse(tree.toxml())
     # else:
         #return HttpResponse('')
+
+def empty_page(request):
+    return HttpResponse("<script>alert('这里暂时还没有什么，去别处看看吧~~~');</script>")
 
 def message_divide(request):
     '''
