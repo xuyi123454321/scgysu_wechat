@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'message_receive',
     'menu',
     'review',
-    'mis'
+    # 'mis',
+    'id_associated
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,7 +109,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # usgin django-crontab to grap materials from wechat
-#CRONJOBS = [
+CRONJOBS = [
 #    ('* */1 * * *', 'access_token.main'),
-#    ('* * */1 * *', 'review.grap.grap_material')
-#]
+    ('* * */1 * *', 'review.grap.grap_material')
+]

@@ -18,10 +18,12 @@ from django.contrib import admin
 from message_receive import urls as message_receive_urls
 from review import urls as review_urls
 from mis import urls as mis_urls
+from id_associated import urls as id_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(message_receive_urls)),
     url(r'^review/', include(review_urls)),
-    url(r'^mis/', include(mis_urls))
+    # url(r'^mis/', include(mis_urls)),
+    url(r'^id_associated/', include(id_urls))
 ]
