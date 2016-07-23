@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Generator" content="Intellij IDEA®">
+    <meta name="Author" content="中国科大少院学生会 技术支持中心">
+    <meta name="Keywords" content="中国科大少院学生会 微信服务平台">
+    <meta name="Description" content="微信绑定">
+    <title>微信绑定</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+    p{
+        text-align:center;
+        font-size:15px;
+    }
+</style>
+<body style="margin-top:25px; margin-bottom:25px; font-family:'Microsoft YaHei',serif;"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <img src="http://wechat.ourscgy.ustc.edu.cn/static/id_associated/scgy_logo.jpg" class="img-thumbnail" style="margin:5px 5px 5px 5px;"/>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <p>中国科大少院学生会</p>
+                <p>微信服务平台：scgysu</p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <p style="text-align:left; font-size: 15px;">点击按钮以绑定微信</p>
+								<form id="binding" action="http://wechat.ourscgy.ustc.edu.cn/id_associated/res" method="get">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="student_number" name="stu_id" placeholder="请填写您的学号"/>
+                    </div>
+										<input type="hidden" name="openid" value="{{ openid }}">
+                    <button type="submit" class="form-control btn btn-success">绑定微信</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <hr/>
+        <footer class="footer text-center">
+            <span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2016, Student Union of SCGY. All rights
+        reserved.
+        </footer>
+    </div>
+</body>

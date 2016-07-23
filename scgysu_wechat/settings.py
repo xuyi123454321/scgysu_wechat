@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'menu',
     'review',
     # 'mis',
-    'id_associated
+    'id_associated'
 )
 
 MIDDLEWARE_CLASSES = (
