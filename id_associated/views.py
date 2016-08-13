@@ -14,6 +14,7 @@ def init_page(request):
     URL in wechat menu is https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
     where
         REDIRECT_URI = http://wechat.ourscgy.ustc.edu.cn/id_associated/init
+            (use urllib.parse.quote_plus to quote it)
         SCOPE = snsapi_userinfo
         state is optional.
     REDIRECT_URI will be loaded as redirect_uri/?code=CODE&state=STATE.

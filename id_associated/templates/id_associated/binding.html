@@ -10,6 +10,24 @@
     <meta name="Description" content="微信绑定">
     <title>微信绑定</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<script>
+        function validateForm() {
+            var x = document.forms["binding"]["stu_id"].value;
+            if(x.length != 10) {
+                alert("学号长度不符合");
+                return false;
+            }
+            if(x.substring(0,2).toLowerCase() != 'pb') {
+                alert("对不起，暂时只支持PB开头的学号");
+                return false;
+            }
+            if(!/[0-9]/.test(x.substring(2))) {
+                alert("学号格式错误");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <style type="text/css">
     p{
@@ -38,11 +56,11 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <p style="text-align:left; font-size: 15px;">点击按钮以绑定微信</p>
-								<form id="binding" action="http://wechat.ourscgy.ustc.edu.cn/id_associated/res" method="get">
+                <form id="binding" name="binding" action="http://wechat.ourscgy.ustc.edu.cn/id_associated/res" method="get" onsubmit="return validateForm()">
                     <div class="form-group">
                         <input type="text" class="form-control" id="student_number" name="stu_id" placeholder="请填写您的学号"/>
                     </div>
-										<input type="hidden" name="openid" value="{{ openid }}">
+                    <input type="hidden" name="openid" value="{{ openid }}">
                     <button type="submit" class="form-control btn btn-success">绑定微信</button>
                 </form>
             </div>

@@ -46,7 +46,7 @@
 		{
 		  "type":"view",
 		  "name":"incoming...",
-		  "url":"http://ourscgy.ustc.edu.cn/tech"
+		  "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=http%3A%2F%2Fwechat.ourscgy.ustc.edu.cn%2Fid_associated%2Finit&response_type=code&scope=snsapi_userinfo#wechat_redirect"
 		}
       ]
     }
